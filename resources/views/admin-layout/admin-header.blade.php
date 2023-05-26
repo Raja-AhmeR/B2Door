@@ -20,13 +20,13 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets1/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="assets1/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="assets1/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets1/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="{{asset('assets1/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets1/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{asset('assets1/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets1/vendor/quill/quill.snow.css')}}" rel="stylesheet">
+    <link href="{{asset('assets1/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+    <link href="{{asset('assets1/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{asset('assets1/vendor/simple-datatables/style.css')}}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="assets1/css/style.css" rel="stylesheet">
@@ -177,7 +177,7 @@
                         <li class="message-item">
                             <a href="#">
                                 <img src="assets1/img/messages-2.jpg" alt="" class="rounded-circle">
-                                <div>
+                                <div>1
                                     <h4>Anna Nelson</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
                                     <p>6 hrs. ago</p>
@@ -228,7 +228,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <a class="dropdown-item d-flex align-items-center" href="/users-profile">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
                             </a>
@@ -238,7 +238,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <a class="dropdown-item d-flex align-items-center" href="/users-profile">
                                 <i class="bi bi-gear"></i>
                                 <span>Account Settings</span>
                             </a>
@@ -247,12 +247,12 @@
                             <hr class="dropdown-divider">
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                                 <i class="bi bi-question-circle"></i>
                                 <span>Need Help?</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -278,31 +278,26 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="/admin">
+                <a class="nav-link {{ Request::is('admin') ? 'active':'not-active' }}" href="{{ url('admin') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
+                <a class="nav-link {{ Request::is('new-orders' || 'completed-orders' ? '':'collapsed') }}" data-bs-target="#components-nav" data-bs-toggle="collapse"
                     href="#">
                     <i class="bi bi-menu-button-wide"></i><span>Orders</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="components-nav" class="nav-content {{ Request::is('new-orders' || 'completed-orders' ? '':'collapsed') }} " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="/new-orders">
+                        <a href="{{ url('new-orders') }}" class="{{ Request::is('new-orders') ? 'active':'' }}">
                             <i class="bi bi-circle"></i><span>New Order</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/pending-orders">
-                            <i class="bi bi-circle"></i><span>Pending Order</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/completed-orders">
+                        <a href="{{ url('completed-orders') }}" class="{{ Request::is('completed-orders') ? 'active':'' }}">
                             <i class="bi bi-circle"></i><span>Completed Order</span>
                         </a>
                     </li>
@@ -370,20 +365,20 @@
                 </a>
                 <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="forms-elements.html">
-                            <i class="bi bi-circle"></i><span>Hire Distributor</span>
+                        <a href="{{ url('register-distributor') }}" class="{{ Request::is('register-distributor') ? 'active':'' }}">
+                            <i class="bi bi-circle"></i><span>Register Distributor</span>
                         </a>
                     </li>
                     <li>
-                        <a href="forms-layouts.html">
-                            <i class="bi bi-circle"></i><span>View Distributor</span>
+                        <a href="{{ url('view-distributor') }}" class="{{ Request::is('view-distributor') ? 'active':'' }}">
+                            <i class="bi bi-circle"></i><span>View Distributors</span>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="forms-editors.html">
                             <i class="bi bi-circle"></i><span>Blocked Distributors</span>
                         </a>
-                    </li>
+                    </li> --}}
                     {{-- <li>
                         <a href="forms-validation.html">
                             <i class="bi bi-circle"></i><span>Form Validation</span>
@@ -440,33 +435,33 @@
                 </a>
                 <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="icons-bootstrap.html">
-                            <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
+                        <a href="{{ url('register-vehicle') }}" class="{{ Request::is('register-vehicle') ? 'active':'' }}">
+                            <i class="bi bi-circle"></i><span>Register Vehicle</span>
                         </a>
                     </li>
                     <li>
-                        <a href="icons-remix.html">
-                            <i class="bi bi-circle"></i><span>Remix Icons</span>
+                        <a href="{{ url('view-vehicle') }}" class="{{ Request::is('view-vehicle') ? 'active':'' }}">
+                            <i class="bi bi-circle"></i><span>View Vehicles</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="icons-boxicons.html">
-                            <i class="bi bi-circle"></i><span>Boxicons</span>
+                    {{-- <li>
+                        <a href="forms-editors.html">
+                            <i class="bi bi-circle"></i><span>Blocked Vehicles</span>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li><!-- End Icons Nav -->
 
             <li class="nav-heading">Pages</li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.html">
+                <a class="nav-link collapsed" href="/users-profile">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
                 </a>
             </li><!-- End Profile Page Nav -->
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="pages-faq.html">
                     <i class="bi bi-question-circle"></i>
                     <span>F.A.Q</span>
@@ -506,7 +501,7 @@
                     <i class="bi bi-file-earmark"></i>
                     <span>Blank</span>
                 </a>
-            </li><!-- End Blank Page Nav -->
+            </li><!-- End Blank Page Nav --> --}}
 
         </ul>
 

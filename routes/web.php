@@ -29,8 +29,8 @@ Route::get('/register-distributor', function () {
     return view('register-distributor');
 });
 
-Route::get('/distribution', function () {
-    return view('distribution');
+Route::get('/view-distributor', function () {
+    return view('view-distributor');
 });
 
 Route::get('/design', function () {
@@ -45,8 +45,8 @@ Route::get('/tracking', function () {
     return view('tracking');
 });
 
-Route::get('/vehicle-media', function () {
-    return view('vehicle-media');
+Route::get('/view-vehicle', function () {
+    return view('view-vehicle');
 });
 
 Route::get('/register-vehicle', function () {
@@ -61,10 +61,10 @@ Route::get('/new-orders', function () {
     return view('new-orders');
 });
 
-Route::get('/pending-orders', function () {
-    return view('pending-orders');
-});
-
 Route::get('/completed-orders', function () {
     return view('completed-orders');
+});
+
+Route::get('/users-profile', function () {
+    return view('users-profile');
 });

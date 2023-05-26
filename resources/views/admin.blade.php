@@ -1,6 +1,5 @@
 @extends('admin-layout.admin-main')
 @section('admin-section')
-
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -140,7 +139,7 @@
                         <div class="col-12">
                             <div class="card">
 
-                                <div class="filter">
+                                {{-- <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                             class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -152,15 +151,22 @@
                                         <li><a class="dropdown-item" href="#">This Month</a></li>
                                         <li><a class="dropdown-item" href="#">This Year</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Reports <span>/Today</span></h5>
+                                    <h5 class="card-title">Map </h5>
 
                                     <!-- Line Chart -->
-                                    <div id="reportsChart"></div>
+                                    {{-- <div id="reportsChart"></div> --}}
 
-                                    <script>
+                                    {{-- <div class="col-lg-6"> --}}
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13229.750623076494!2d73.0056717849511!3d33.67792715392591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbe1f4447adf5%3A0xac381766b408a3d7!2sG-10%2C%20Islamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2s!4v1680500600236!5m2!1sen!2s"
+                                            width="99%" height="680" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    {{-- </div> --}}
+
+                                    {{-- <script>
                                         document.addEventListener("DOMContentLoaded", () => {
                                             new ApexCharts(document.querySelector("#reportsChart"), {
                                                 series: [{
@@ -215,7 +221,7 @@
                                                 }
                                             }).render();
                                         });
-                                    </script>
+                                    </script> --}}
                                     <!-- End Line Chart -->
 
                                 </div>
@@ -224,7 +230,7 @@
                         </div><!-- End Reports -->
 
                         <!-- Recent Sales -->
-                        <div class="col-12">
+                        {{-- <div class="col-12">
                             <div class="card recent-sales overflow-auto">
 
                                 <div class="filter">
@@ -301,10 +307,10 @@
                                 </div>
 
                             </div>
-                        </div><!-- End Recent Sales -->
+                        </div><!-- End Recent Sales --> --}}
 
                         <!-- Top Selling -->
-                        <div class="col-12">
+                        {{-- <div class="col-12">
                             <div class="card top-selling overflow-auto">
 
                                 <div class="filter">
@@ -336,8 +342,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row"><a href="#"><img
-                                                            src="assets1/img/product-1.jpg" alt=""></a></th>
+                                                <th scope="row"><a href="#"><img src="assets1/img/product-1.jpg"
+                                                            alt=""></a></th>
                                                 <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa
                                                         voluptas nulla</a></td>
                                                 <td>$64</td>
@@ -345,8 +351,8 @@
                                                 <td>$5,828</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row"><a href="#"><img
-                                                            src="assets1/img/product-2.jpg" alt=""></a></th>
+                                                <th scope="row"><a href="#"><img src="assets1/img/product-2.jpg"
+                                                            alt=""></a></th>
                                                 <td><a href="#" class="text-primary fw-bold">Exercitationem
                                                         similique doloremque</a></td>
                                                 <td>$46</td>
@@ -354,8 +360,8 @@
                                                 <td>$4,508</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row"><a href="#"><img
-                                                            src="assets1/img/product-3.jpg" alt=""></a></th>
+                                                <th scope="row"><a href="#"><img src="assets1/img/product-3.jpg"
+                                                            alt=""></a></th>
                                                 <td><a href="#" class="text-primary fw-bold">Doloribus nisi
                                                         exercitationem</a></td>
                                                 <td>$59</td>
@@ -363,8 +369,8 @@
                                                 <td>$4,366</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row"><a href="#"><img
-                                                            src="assets1/img/product-4.jpg" alt=""></a></th>
+                                                <th scope="row"><a href="#"><img src="assets1/img/product-4.jpg"
+                                                            alt=""></a></th>
                                                 <td><a href="#" class="text-primary fw-bold">Officiis quaerat
                                                         sint rerum error</a></td>
                                                 <td>$32</td>
@@ -372,8 +378,8 @@
                                                 <td>$2,016</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row"><a href="#"><img
-                                                            src="assets1/img/product-5.jpg" alt=""></a></th>
+                                                <th scope="row"><a href="#"><img src="assets1/img/product-5.jpg"
+                                                            alt=""></a></th>
                                                 <td><a href="#" class="text-primary fw-bold">Sit unde debitis
                                                         delectus repellendus</a></td>
                                                 <td>$79</td>
@@ -386,7 +392,7 @@
                                 </div>
 
                             </div>
-                        </div><!-- End Top Selling -->
+                        </div><!-- End Top Selling --> --}}
 
                     </div>
                 </div><!-- End Left side columns -->
@@ -546,7 +552,7 @@
                     </div><!-- End Budget Report -->
 
                     <!-- Website Traffic -->
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                     class="bi bi-three-dots"></i></a>
@@ -622,10 +628,10 @@
                             </script>
 
                         </div>
-                    </div><!-- End Website Traffic -->
+                    </div><!-- End Website Traffic --> --}}
 
                     <!-- News & Updates Traffic -->
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i
                                     class="bi bi-three-dots"></i></a>
@@ -681,7 +687,7 @@
                             </div><!-- End sidebar recent posts-->
 
                         </div>
-                    </div><!-- End News & Updates -->
+                    </div><!-- End News & Updates --> --}}
 
                 </div><!-- End Right side columns -->
 
@@ -689,5 +695,4 @@
         </section>
 
     </main><!-- End #main -->
-
 @endsection
